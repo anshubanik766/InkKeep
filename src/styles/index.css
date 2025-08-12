@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for InkKeep */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-bounce {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+.note {
+    animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+.add-note {
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+body {
+    animation: pageFadeIn 0.8s ease-in-out;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Light mode */
+.light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Dark mode */
+.dark {
+    background-color: #1e1e2f;
+    color: #f8f9fa;
+}
+
+/* Container */
+.app-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Buttons */
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #007bff;
+    color: white;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+/* Input fields */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+}
+
+/* Notes list */
+.note {
+    background-color: rgba(255,255,255,0.05);
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    animation: slideUp 0.4s ease;
+}
+
+/* Dark mode adjustments */
+.dark .note {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.light .note {
+    background-color: #ffffff;
+}
+
+/* Theme toggle icon */
+.theme-toggle {
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* small animation helper */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 220ms ease;
+}
+
+/* optional custom font class for cursive */
+.font-hand {
+    font-family: "Indie Flower", "Segoe UI", cursive;
+}
+
+/* dark mode base if you use class toggling on documentElement */
+:root { --bg: #f8fafc; --text: #111827; }
+.dark { --bg: #0b1220; --text: #e6eef8; }
+
+body { background: var(--bg); color: var(--text); }
+
+/* responsive textarea autosize styling */
+textarea { resize: vertical; min-height: 120px; max-height: 60vh; }
+
